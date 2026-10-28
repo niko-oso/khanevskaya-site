@@ -786,6 +786,33 @@ footer .f-legal a{display:inline;padding:0}
 
 @media (min-width:621px){.modal{padding:16px}.m-panel{padding:28px 32px}}
 
+/* never deform round/square UI elements: they don't shrink in flex rows */
+.ic,.ar,.m-chev,.qa-ic,.rv-btn,.u-ic,.wl-ic,.ab-ic,.pr-ic,.ic2,.rc-av,.people .av,.wic,.cx-ic,.totop,.m-x,.f-tg,.step .ill,.m-ok-ic,.ward-row button .wic{flex-shrink:0;aspect-ratio:1/1}
+/* mobile buttons: single-line labels */
+@media (max-width:620px){
+  .btn{white-space:nowrap;height:52px;min-height:52px;padding-top:0;padding-bottom:0;font-size:15px;padding-left:20px}
+  .btn.btn-ghost{padding:0 20px}
+  .btn .ar{width:36px;height:36px}
+  .faq-btns .btn,.doc-help-btns .btn{flex:1 1 auto;justify-content:space-between;min-width:0}
+}
+@media (max-width:360px){
+  .btn{font-size:14px;padding-left:16px;gap:10px}
+  .btn .ar{width:32px;height:32px}
+}
+
+@media (max-width:360px){
+  .faq-card-b,.doc-help{padding:18px 16px}
+  .faq-btns .btn,.doc-help-btns .btn{padding-left:14px;gap:8px;padding-right:4px}
+  .m-panel-c{padding-left:16px !important;padding-right:16px !important}
+}
+
+@media (max-width:360px){
+  .faq-btns,.doc-help-btns{gap:6px}
+  .faq-btns .ic,.doc-help-btns .ic{width:40px;height:40px}
+  .faq-btns .btn,.doc-help-btns .btn{font-size:13.5px}
+  .faq-btns .btn .ar,.doc-help-btns .btn .ar{width:30px;height:30px}
+}
+
 /* ===== Школа спикеров ===== */
 .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:var(--gray);margin-bottom:18px}
 .crumbs a{color:var(--ink2);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(21,26,36,.25)}
