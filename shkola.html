@@ -816,6 +816,35 @@ footer .f-legal a{display:inline;padding:0}
 /* stacked headings: subtitle close to h2 */
 @media (max-width:1100px){.dir-h,.school-top,.rv-head{gap:16px !important}.dir-h p,.school-top p{margin-top:0}}
 
+/* mobile logo a bit larger, with air between header items */
+@media (max-width:620px){.hdr .logo svg{height:50px}.hdr{gap:8px}}
+@media (max-width:380px){.hdr .logo svg{height:40px}.hdr{gap:6px}}
+
+@media (max-width:380px){.hdr .logo svg{height:46px}}
+@media (max-width:350px){.hdr .logo svg{height:40px}}
+@media (max-width:335px){.hdr .logo svg{height:36px}}
+
+/* main hero: warm gradient mesh + film grain (variant 1) */
+.page:not(.pg-school)>.hero{background:radial-gradient(58% 70% at 6% 14%,rgba(249,214,176,.95) 0%,rgba(249,214,176,0) 62%),radial-gradient(46% 60% at 34% 100%,rgba(247,198,49,.30) 0%,rgba(247,198,49,0) 66%),radial-gradient(40% 50% at 0% 100%,rgba(226,64,45,.13) 0%,rgba(226,64,45,0) 70%),radial-gradient(40% 45% at 30% 30%,rgba(255,244,226,.9) 0%,rgba(255,244,226,0) 70%),#EFE7DA}
+.page:not(.pg-school)>.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 0 0.1 0 0 0 .55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:180px 180px;opacity:.32;mix-blend-mode:multiply}
+@media (min-width:1321px){
+  .page:not(.pg-school)>.hero .portrait::after{background:radial-gradient(58% 70% at 6% 14%,rgba(249,214,176,.95) 0%,rgba(249,214,176,0) 62%),radial-gradient(46% 60% at 34% 100%,rgba(247,198,49,.30) 0%,rgba(247,198,49,0) 66%),radial-gradient(40% 50% at 0% 100%,rgba(226,64,45,.13) 0%,rgba(226,64,45,0) 70%),radial-gradient(40% 45% at 30% 30%,rgba(255,244,226,.9) 0%,rgba(255,244,226,0) 70%),linear-gradient(90deg,rgba(239,231,218,.94) 0%,rgba(239,231,218,.62) 30%,rgba(239,231,218,0) 54%)}
+}
+@media (min-width:861px) and (max-width:1320px){
+  .page:not(.pg-school)>.hero .portrait::after{display:none}
+  .page:not(.pg-school)>.hero .portrait{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 26%);mask-image:linear-gradient(90deg,transparent 0%,#000 26%)}
+}
+.page:not(.pg-school)>.hero .hero-c{z-index:2}
+.page:not(.pg-school)>.hero .float{z-index:3}
+
+/* main hero: grain only on the left half; «события» more visible */
+.page:not(.pg-school)>.hero::before{-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 40%,transparent 58%);mask-image:linear-gradient(90deg,#000 0%,#000 40%,transparent 58%)}
+.page:not(.pg-school)>.hero .h1 .g{color:#7F828C}
+@media (max-width:860px){
+  .page:not(.pg-school)>.hero::before{-webkit-mask-image:none;mask-image:none}
+  .page:not(.pg-school)>.hero .portrait{z-index:2}
+}
+
 /* ===== Школа спикеров ===== */
 .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:var(--gray);margin-bottom:18px}
 .crumbs a{color:var(--ink2);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(21,26,36,.25)}
@@ -1055,6 +1084,32 @@ footer .f-legal a{display:inline;padding:0}
   .qa summary{font-size:16px;padding:16px 18px}
   .qa p{padding:0 18px 16px}
 }
+
+/* unified h1 = main page */
+.hero-split .h1,.pg-school .hero-split .h1,.pg-dir .hero-split .h1,.doc-h1,.nf-h1{font-size:clamp(48px,min(6.4vw,11vh),104px)}
+@media (max-width:620px){.hero-split .h1,.pg-school .hero-split .h1,.pg-dir .hero-split .h1,.doc-h1,.nf-h1{font-size:clamp(44px,13vw,56px)}}
+@media (max-width:380px){.hero-split .h1,.pg-school .hero-split .h1,.pg-dir .hero-split .h1,.doc-h1,.nf-h1{font-size:42px}}
+/* hero facts: numbers centered vertically, texts always two lines */
+.hfacts li{align-items:center;max-width:none;gap:10px}
+.hfacts b{line-height:1}
+.hfacts span{white-space:nowrap;line-height:1.3}
+@media (min-width:1101px){.pg-dir .hero-split .hero-c{padding-top:28px;padding-bottom:32px}.pg-dir .hero-split .lead{margin-top:14px;font-size:16.5px}.pg-dir .hero-btns{margin-top:22px}.pg-dir .hfacts{margin-top:22px}}
+
+/* warm gradient mesh + left-half film grain on first screens (same as main) */
+.hero-split,.doc-hero,.nf{background:radial-gradient(58% 70% at 6% 14%,rgba(249,214,176,.95) 0%,rgba(249,214,176,0) 62%),radial-gradient(46% 60% at 34% 100%,rgba(247,198,49,.30) 0%,rgba(247,198,49,0) 66%),radial-gradient(40% 50% at 0% 100%,rgba(226,64,45,.13) 0%,rgba(226,64,45,0) 70%),radial-gradient(40% 45% at 30% 30%,rgba(255,244,226,.9) 0%,rgba(255,244,226,0) 70%),#EFE7DA !important}
+.hero-split::before,.doc-hero::before,.nf::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border-radius:inherit;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 0 0.1 0 0 0 .55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:180px 180px;opacity:.32;mix-blend-mode:multiply;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 40%,transparent 58%);mask-image:linear-gradient(90deg,#000 0%,#000 40%,transparent 58%)}
+.doc-hero>*,.nf>*{position:relative;z-index:2}
+.hero-split .hero-c{z-index:2}
+.hero-split .float{z-index:3}
+.hero-split .h1 .g,.doc-h1 .g,.nf-h1 .g{color:#7F828C}
+@media (min-width:861px){
+  .hero-split .portrait::after{display:none !important}
+  .hero-split .portrait{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 26%);mask-image:linear-gradient(90deg,transparent 0%,#000 26%)}
+}
+@media (max-width:860px){
+  .hero-split::before,.doc-hero::before,.nf::before{-webkit-mask-image:none;mask-image:none}
+  .hero-split .portrait{z-index:2}
+}
 </style>
 </head>
 <body>
@@ -1108,9 +1163,9 @@ footer .f-legal a{display:inline;padding:0}
       <a class="btn btn-ghost" href="#programma">Программа курса</a>
     </div>
     <ul class="trust hfacts">
-      <li><b>4–10</b><span>занятий до результата</span></li>
-      <li><b>2</b><span>тренинговых дня интенсива</span></li>
-      <li><b>15</b><span>лет проверяла методику</span></li>
+      <li><b>4–10</b><span>занятий<br>до результата</span></li>
+      <li><b>2</b><span>тренинговых<br>дня интенсива</span></li>
+      <li><b>15</b><span>лет проверяла<br>методику</span></li>
     </ul>
   </div>
 </section>
