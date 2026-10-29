@@ -84,7 +84,7 @@ img{display:block;max-width:100%}
 .trust .logos{display:flex}
 .trust .logos span{width:46px;height:46px;border-radius:50%;background:var(--white);border:3px solid #EBE5D8;margin-left:-12px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;overflow:hidden}
 .trust .logos span:first-child{margin-left:0}
-.trust .logos img{width:66%;height:66%;object-fit:contain;filter:grayscale(1);mix-blend-mode:multiply}
+.trust .logos img{width:66%;height:66%;object-fit:contain;mix-blend-mode:multiply}
 .trust p{margin:0;font-size:14px;line-height:1.35;color:#4A505B}
 .trust b{display:block;color:var(--ink);font-size:15px}
 .float{position:absolute;z-index:3;border-radius:var(--r2);background:rgba(255,255,255,.88);backdrop-filter:blur(10px);box-shadow:0 20px 40px -24px rgba(21,26,36,.4)}
@@ -853,6 +853,16 @@ footer .f-legal a{display:inline;padding:0}
 @media (min-width:861px){.hero-c{container-type:inline-size}.hero-c #heroTitle{max-width:none;font-size:min(clamp(48px,min(6.4vw,11vh),104px),14cqi)}}
 @media (min-width:861px) and (max-width:1100px){.hero-c #heroTitle{font-size:min(clamp(48px,6.4vw,72px),14cqi)}}
 </style>
+<script>
+/* arriving via page.html#block: jump straight to the block instead of a long smooth scroll from the top */
+(function(){
+  var id=decodeURIComponent(location.hash.slice(1));if(!id)return;
+  var d=document.documentElement,y=null;d.style.scrollBehavior='auto';
+  function go(){var t=document.getElementById(id);if(!t||t.closest('#modal'))return;if(y===null||Math.abs(scrollY-y)<2){t.scrollIntoView();y=scrollY}}
+  addEventListener('DOMContentLoaded',go);
+  addEventListener('load',function(){go();setTimeout(function(){d.style.scrollBehavior=''},100)});
+})();
+</script>
 </head>
 <body>
 
@@ -1239,7 +1249,7 @@ footer .f-legal a{display:inline;padding:0}
     <div class="m-ok" hidden>
       <span class="m-ok-ic" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
       <h2 class="mf-title" tabindex="-1">Заявка отправлена</h2>
-      <p class="mf-sub">Спасибо! Отвечу в'+NB+'течение рабочего дня. Если вопрос срочный — напишите в'+NB+'Telegram.</p>
+      <p class="mf-sub">Спасибо! Отвечу Вам в&nbsp;течение рабочего дня. Если вопрос срочный — напишите в&nbsp;Telegram.</p>
       <div class="m-ok-btns"><a class="btn btn-y" href="https://t.me/LinaKh" target="_blank" rel="noopener">Написать в Telegram<span class="ar"><svg><use href="#arr"/></svg></span></a><button class="btn btn-ghost" type="button" data-close>Закрыть</button></div>
     </div>
   </div>
